@@ -325,7 +325,8 @@ export default function InventoryPage() {
 
                       <div className="req-actions">
                         <button 
-                          className="btn-approve-release"
+                          className="btn-primary"
+                          style={{ width: '100%', justifyContent: 'center' }}
                           onClick={() => handleApproveRequest(req.id)}
                         >
                           <Check size={14} />
