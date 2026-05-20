@@ -558,10 +558,11 @@ export default function InventoryPage() {
             </div>
             
             <form onSubmit={handleCatalogSubmit} className="modal-form">
-              <div className="form-group">
-                <label>Product Name</label>
+              <div className="form-field">
+                <label className="form-label">Product Name</label>
                 <input 
                   type="text" 
+                  className="form-input"
                   value={prodForm.name} 
                   onChange={e => setProdForm({ ...prodForm, name: e.target.value })} 
                   placeholder="e.g. Premium Noise-Cancelling Headphones"
@@ -569,10 +570,11 @@ export default function InventoryPage() {
                 />
               </div>
 
-              <div className="form-group">
-                <label>Unit Price (INR)</label>
+              <div className="form-field">
+                <label className="form-label">Unit Price (INR)</label>
                 <input 
                   type="number" 
+                  className="form-input"
                   value={prodForm.price} 
                   onChange={e => setProdForm({ ...prodForm, price: e.target.value })} 
                   placeholder="e.g. 1500"
@@ -580,9 +582,10 @@ export default function InventoryPage() {
                 />
               </div>
 
-              <div className="form-group">
-                <label>Description</label>
+              <div className="form-field">
+                <label className="form-label">Description</label>
                 <textarea 
+                  className="feedback-textarea"
                   value={prodForm.description} 
                   onChange={e => setProdForm({ ...prodForm, description: e.target.value })} 
                   placeholder="Brief description of product features..."
