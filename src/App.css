@@ -327,6 +327,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 
 /* Responsive Grid Classes */
 .grid-4col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.grid-3col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .grid-2col { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .grid-2fr1fr { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
 
@@ -352,6 +353,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 /* Mobile & Tablet Overrides */
 @media (max-width: 1024px) {
   .grid-4col { grid-template-columns: repeat(2, 1fr); }
+  .grid-3col { grid-template-columns: repeat(2, 1fr); }
   .grid-2fr1fr { grid-template-columns: 1fr; }
 }
 
@@ -415,6 +417,10 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 
   .page-container {
     padding: 20px;
+  }
+
+  .grid-3col {
+    grid-template-columns: 1fr;
   }
 
   .stats-row {

@@ -262,11 +262,12 @@ export default function TasksPage() {
   );
 }
 
-function CreateTaskModal({ onClose, onSuccess }) {
+export function CreateTaskModal({ onClose, onSuccess, initialForm }) {
   const [form, setForm] = useState({
     title: '', description: '', instructions: '',
     location_link: '', location_address: '',
     price: '', category: '', deadline: '', assigned_agent_id: '',
+    ...initialForm
   });
   const [agents, setAgents] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -324,7 +325,7 @@ function CreateTaskModal({ onClose, onSuccess }) {
       }
 
       toast.success(form.assigned_agent_id ? 'Task created and assigned to employee' : 'Task created and broadcast to all employees');
-      onSuccess();
+      onSuccess(newTask);
     } catch (err) {
       toast.error(err.message || 'Failed to create task');
     } finally {

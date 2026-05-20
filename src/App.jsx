@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { supabase, sendPushNotification } from './services/supabase';
 import toast, { Toaster } from 'react-hot-toast';
-import { LayoutDashboard, Users, ClipboardList, DollarSign, RefreshCw, Wifi, WifiOff, X, CheckCircle, XCircle, FileText, Menu, Package } from 'lucide-react';
+import { LayoutDashboard, Users, ClipboardList, DollarSign, RefreshCw, Wifi, WifiOff, X, CheckCircle, XCircle, FileText, Menu, Package, ShoppingCart } from 'lucide-react';
 import AnalyticsPage from './pages/Analytics';
 import TasksPage from './pages/Tasks';
 import PaymentsPage from './pages/Payments';
 import InventoryPage from './pages/Inventory';
+import ShopOrdersPage from './pages/ShopOrders';
 import './App.css';
 
 const STATUS_COLORS = {
@@ -109,6 +110,7 @@ const NAV_ITEMS = [
   { icon: LayoutDashboard, label: 'Dashboard' },
   { icon: Users, label: 'Agents' },
   { icon: ClipboardList, label: 'Tasks' },
+  { icon: ShoppingCart, label: 'Shop Orders' },
   { icon: DollarSign, label: 'Earnings' },
   { icon: Package, label: 'Inventory' },
 ];
@@ -197,6 +199,7 @@ export default function App() {
   const renderContent = () => {
     if (activeTab === 'Dashboard') return <AnalyticsPage />;
     if (activeTab === 'Tasks')     return <TasksPage />;
+    if (activeTab === 'Shop Orders') return <ShopOrdersPage />;
     if (activeTab === 'Earnings')  return <PaymentsPage />;
     if (activeTab === 'Inventory') return <InventoryPage />;
 
